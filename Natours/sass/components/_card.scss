@@ -13,6 +13,7 @@
     top: 0;
     left: 0;
     width: 100%;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: $default-border-radius;
     overflow: hidden;
@@ -58,58 +59,57 @@
   &__picture {
     height: 23rem;
     background-size: cover;
-    background-blend-mode: screen;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    @supports (background-blend-mode: screen) {
+      background-blend-mode: screen;
+    }
     &--1 {
-      background-image: linear-gradient(
-          to right bottom,
-          $color-secondary-light,
-          $color-secondary-dark
-        ),
+      background-image: $card-background-opacity-1,
         url('../img/nat-5-small.jpg');
       @media (min-resolution: 192dpi) and (min-width: 37.5em),
         (min-width: 125em) {
-        background-image: linear-gradient(
-            to right bottom,
-            $color-secondary-light,
-            $color-secondary-dark
-          ),
+        background-image: $card-background-opacity-1,
           url('../img/nat-5-big.jpg');
+      }
+      @supports (background-blend-mode: screen) {
+        background-image: $card-background-full-1, url('../img/nat-5-small.jpg');
+        @media (min-resolution: 192dpi) and (min-width: 37.5em),
+          (min-width: 125em) {
+          background-image: $card-background-full-1, url('../img/nat-5-big.jpg');
+        }
       }
     }
     &--2 {
-      background-image: linear-gradient(
-          to right bottom,
-          $color-primary-light,
-          $color-primary-dark
-        ),
+      background-image: $card-background-opacity-2,
         url('../img/nat-6-small.jpg');
       @media (min-resolution: 192dpi) and (min-width: 37.5em),
         (min-width: 125em) {
-        background-image: linear-gradient(
-            to right bottom,
-            $color-primary-light,
-            $color-primary-dark
-          ),
+        background-image: $card-background-opacity-2,
           url('../img/nat-6-big.jpg');
+      }
+      @supports (background-blend-mode: screen) {
+        background-image: $card-background-full-2, url('../img/nat-6-small.jpg');
+        @media (min-resolution: 192dpi) and (min-width: 37.5em),
+          (min-width: 125em) {
+          background-image: $card-background-full-2, url('../img/nat-6-big.jpg');
+        }
       }
     }
     &--3 {
-      background-image: linear-gradient(
-          to right bottom,
-          $color-tertiary-light,
-          $color-tertiary-dark
-        ),
+      background-image: $card-background-opacity-3,
         url('../img/nat-7-small.jpg');
       @media (min-resolution: 192dpi) and (min-width: 37.5em),
         (min-width: 125em) {
-        background-image: linear-gradient(
-            to right bottom,
-            $color-tertiary-light,
-            $color-tertiary-dark
-          ),
+        background-image: $card-background-opacity-3,
           url('../img/nat-7-big.jpg');
+      }
+      @supports (background-blend-mode: screen) {
+        background-image: $card-background-full-3, url('../img/nat-7-small.jpg');
+        @media (min-resolution: 192dpi) and (min-width: 37.5em),
+          (min-width: 125em) {
+          background-image: $card-background-full-3, url('../img/nat-7-big.jpg');
+        }
       }
     }
   }
@@ -205,20 +205,26 @@
     }
     &__details {
       padding: 1rem 3rem;
-    } // BACK SIDE STYLES
+    }
+    // BACK SIDE STYLES
     &__cta {
       position: relative;
       top: 0;
       left: 0;
       transform: translate(0);
       width: 100%;
-      padding: 7rem 4rem 4rem 4rem;
+      padding: 3rem;
+      @supports (-webkit-clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%))
+        or (clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%)) {
+        padding: 7rem 4rem 4rem 4rem;
+      }
     }
     &__price-box {
       margin-bottom: 3rem;
     }
     &__price-value {
       font-size: 4rem;
+      font-weight: 300;
     }
   }
 }

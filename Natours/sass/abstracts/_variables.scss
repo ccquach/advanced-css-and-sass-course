@@ -40,3 +40,35 @@ $box-shadow-dark-far: 0 2.5rem 4rem rgba($color-black, 0.5);
 
 // BORDER RADIUS
 $default-border-radius: 3px;
+
+// CARD BACKGROUND IMAGE BROWSER SUPPORT OPTIONS
+$card-background-opacity-1: linear-gradient(
+  to right bottom,
+  rgba($color-secondary-light, 0.5),
+  rgba($color-secondary-dark, 0.5)
+);
+$card-background-full-1: linear-gradient(
+  to right bottom,
+  $color-secondary-light,
+  $color-secondary-dark
+);
+$card-background-opacity-2: linear-gradient(
+  to right bottom,
+  rgba($color-primary-light, 0.5),
+  rgba($color-primary-dark, 0.5)
+);
+$card-background-full-2: linear-gradient(
+  to right bottom,
+  $color-primary-light,
+  $color-primary-dark
+);
+$card-background-opacity-3: linear-gradient(
+  to right bottom,
+  rgba($color-tertiary-light, 0.5),
+  rgba($color-tertiary-dark, 0.5)
+);
+$card-background-full-3: linear-gradient(
+  to right bottom,
+  $color-tertiary-light,
+  $color-tertiary-dark
+);

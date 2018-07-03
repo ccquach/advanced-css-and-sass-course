@@ -10,7 +10,10 @@
 
   &__content {
     height: 100%;
-    width: 100%;
-    object-fit: cover;
+    // width: 100%;
+
+    @supports (object-fit: cover) {
+      object-fit: cover;
+    }
   }
 }
