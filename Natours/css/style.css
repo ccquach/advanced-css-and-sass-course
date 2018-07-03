@@ -48,6 +48,9 @@ $breakpoint argument choices:
   padding: 0;
   box-sizing: inherit; }
 
+*:focus {
+  outline: none; }
+
 html {
   font-size: 62.5%; }
   @media only screen and (min-width: 112.5em) {
@@ -950,7 +953,8 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   list-style: none;
-  text-align: center; }
+  text-align: center;
+  width: 75%; }
 
 .navigation__item {
   margin: 1rem; }
