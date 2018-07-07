@@ -13,10 +13,19 @@
   transform: translate(-50%, -50%);
 }
 
+@mixin linear-gradient-primary-text {
+  background-image: linear-gradient(
+    to right,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
 // MEDIA QUERY MANAGER
-
-/*
-0 - 600px:         Phone
+/* 0 - 600px:         Phone
 600px - 900px:     Tablet portrait
 900px - 1200px:    Tablet landscape
 [1200px - 1800px] is where normal styles apply
@@ -28,8 +37,7 @@ $breakpoint argument choices:
 - tab-land
 - big-desktop
 
-1em = 16px
-*/
+1em = 16px */
 @mixin respond($breakpoint) {
   @if $breakpoint == phone {
     // 600px
@@ -37,21 +45,18 @@ $breakpoint argument choices:
       @content;
     }
   }
-
   @if $breakpoint == tab-port {
     // 900px
     @media only screen and (max-width: 56.25em) {
       @content;
     }
   }
-
   @if $breakpoint == tab-land {
     // 1200px
     @media only screen and (max-width: 75em) {
       @content;
     }
   }
-
   @if $breakpoint == big-desktop {
     // 1800px
     @media only screen and (min-width: 112.5em) {

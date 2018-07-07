@@ -444,8 +444,7 @@
   content: "\e028";
 }
 
-/*
-0 - 600px:         Phone
+/* 0 - 600px:         Phone
 600px - 900px:     Tablet portrait
 900px - 1200px:    Tablet landscape
 [1200px - 1800px] is where normal styles apply
@@ -457,8 +456,7 @@ $breakpoint argument choices:
 - tab-land
 - big-desktop
 
-1em = 16px
-*/
+1em = 16px */
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -555,16 +553,16 @@ body {
   font-size: 3.5rem;
   text-transform: uppercase;
   font-weight: 700;
-  display: inline-block;
   color: #55c57a;
   letter-spacing: 0.2rem;
   transition: all 0.2s; }
-  @supports (-webkit-background-clip: text) or (background-clip: text) {
+  @supports (background-clip: text) or (-webkit-background-clip: text) {
     .heading-secondary {
       background-image: linear-gradient(to right, #7ed56f, #28b485);
       -webkit-background-clip: text;
       background-clip: text;
-      color: transparent; } }
+      color: transparent;
+      display: inline-block; } }
   @media only screen and (max-width: 56.25em) {
     .heading-secondary {
       font-size: 3rem; } }
@@ -927,12 +925,13 @@ body {
     font-size: 6rem;
     margin-bottom: 0.5rem;
     color: #55c57a; }
-    @supports (-webkit-background-clip: text) or (background-clip: text) {
+    @supports (background-clip: text) or (-webkit-background-clip: text) {
       .feature-box__icon {
         background-image: linear-gradient(to right, #7ed56f, #28b485);
         -webkit-background-clip: text;
         background-clip: text;
-        color: transparent; } }
+        color: transparent;
+        display: inline-block; } }
     @media only screen and (max-width: 56.25em) {
       .feature-box__icon {
         margin-bottom: 0; } }
