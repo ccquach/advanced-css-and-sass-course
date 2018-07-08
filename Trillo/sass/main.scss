@@ -4,8 +4,9 @@
 @import './base/base';
 @import './base/typography';
 
-@import './layout/container';
-@import './layout/content';
+@import './components/search';
+
+@import './layout/layout';
 @import './layout/header';
 @import './layout/main-view';
 @import './layout/sidebar';
