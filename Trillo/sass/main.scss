@@ -6,9 +6,13 @@
 @import './base/typography';
 
 @import './components/button';
+@import './components/list';
+@import './components/recommend';
 @import './components/search';
 
 @import './layout/layout';
 @import './layout/header';
 @import './layout/main-view';
 @import './layout/sidebar';
+
+@import './pages/hotel';
