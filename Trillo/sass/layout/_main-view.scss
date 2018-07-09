@@ -1,9 +1,7 @@
 .main-view {
   background-color: var(--color-white);
 
-  .description {
-    box-shadow: var(--shadow-light);
-    padding: 3rem;
+  & > * {
     font-size: 1.4rem;
   }
 }

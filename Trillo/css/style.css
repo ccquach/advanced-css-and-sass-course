@@ -62,8 +62,13 @@ body {
   background-color: transparent;
   cursor: pointer;
   transition: all 0.2s ease-out; }
+  .btn-inline span {
+    margin-left: 3px;
+    transition: margin-left 0.2s ease-out; }
   .btn-inline:hover {
     color: var(--color-grey-dark-1); }
+    .btn-inline:hover span {
+      margin-left: 0.8rem; }
   .btn-inline:focus {
     outline: none;
     animation: pulsate 1s infinite; }
@@ -106,6 +111,50 @@ body {
     border: 1px solid var(--color-white); }
     .recommend__photo:not(:last-child) {
       margin-right: -1.5rem; }
+
+.review {
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-light);
+  padding: 3rem;
+  margin-bottom: 3.5rem;
+  position: relative;
+  overflow: hidden; }
+  .review::before {
+    content: '\201C';
+    position: absolute;
+    top: -2.75rem;
+    left: -1rem;
+    line-height: 1;
+    font-size: 20rem;
+    font-family: sans-serif;
+    color: var(--color-grey-light-2);
+    z-index: 1; }
+  .review__text {
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 10; }
+  .review__user {
+    display: flex;
+    align-items: center; }
+    .review__user-box {
+      margin-right: auto; }
+    .review__user-name {
+      text-transform: uppercase;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem; }
+    .review__user-date {
+      font-size: 1rem;
+      color: var(--color-grey-dark-3); }
+  .review__photo {
+    height: 4.5rem;
+    width: 4.5rem;
+    border-radius: 50%;
+    margin-right: 1rem; }
+  .review__rating {
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: var(--color-primary); }
 
 .search {
   flex: 0 0 40%;
@@ -164,18 +213,16 @@ body {
   flex: 1; }
 
 .detail {
-  display: flex;
-  padding: 4.5rem;
-  background-color: var(--color-grey-light-1);
-  border-bottom: var(--line); }
+  display: flex; }
 
 .description {
-  flex: 0 0 60%;
-  margin-right: 4.5rem; }
+  flex: 0 0 60%; }
 
 .user-reviews {
-  background-color: yellowgreen;
-  flex: 1; }
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
 
 .header {
   background-color: var(--color-white);
@@ -226,9 +273,7 @@ body {
 
 .main-view {
   background-color: var(--color-white); }
-  .main-view .description {
-    box-shadow: var(--shadow-light);
-    padding: 3rem;
+  .main-view > * {
     font-size: 1.4rem; }
 
 .sidebar {
@@ -319,10 +364,21 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center; }
-    .main-view .overview__rating--average {
+    .main-view .overview__rating-average {
       font-size: 2.25rem;
       font-weight: 300;
       margin-bottom: -3px; }
-    .main-view .overview__rating--count {
+    .main-view .overview__rating-count {
       font-size: 0.8rem;
       text-transform: uppercase; }
+
+.main-view .detail {
+  padding: 4.5rem;
+  background-color: var(--color-grey-light-1);
+  border-bottom: var(--line); }
+
+.main-view .description {
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-light);
+  padding: 3rem;
+  margin-right: 4.5rem; }
