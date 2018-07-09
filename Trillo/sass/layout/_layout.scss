@@ -41,6 +41,10 @@
 
 .sidebar {
   flex: 0 0 18%;
+
+  @include respond(medium) {
+    flex: 0 0 auto;
+  }
 }
 
 .main-view {
