@@ -1,29 +1,88 @@
-.btn-inline {
+.btn {
+  // CTA BUTTON
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 10rem;
   border: none;
-  color: var(--color-primary);
-  font-size: inherit;
-  border-bottom: 1px solid currentColor;
-  padding-bottom: 2px;
-  display: inline-block;
-  background-color: transparent;
+  background-image: linear-gradient(
+    to right,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
+  color: var(--color-white);
+  position: relative;
+  overflow: hidden;
   cursor: pointer;
-  transition: all 0.2s ease-out;
 
-  & span {
-    margin-left: 3px;
-    transition: margin-left 0.2s ease-out;
+  & > * {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    transition: all 0.2s ease-out;
+  }
+
+  &__visible {
+    padding: 2rem 7.5rem;
+  }
+
+  &__hidden {
+    padding: 2rem 0;
+    position: absolute;
+    top: -100%;
+    left: 0;
   }
 
   &:hover {
-    color: var(--color-grey-dark-1);
+    background-image: linear-gradient(
+      to left,
+      var(--color-primary-light),
+      var(--color-primary-dark)
+    );
+  }
 
-    span {
-      margin-left: 0.8rem;
-    }
+  &:hover &__visible {
+    transform: translateY(100%);
+  }
+
+  &:hover &__hidden {
+    top: 0;
   }
 
   &:focus {
     outline: none;
     animation: pulsate 1s infinite;
+  }
+
+  // INLINE BUTTON
+
+  &-inline {
+    border: none;
+    color: var(--color-primary);
+    font-size: inherit;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 2px;
+    display: inline-block;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+
+    & span {
+      margin-left: 3px;
+      transition: margin-left 0.2s ease-out;
+    }
+
+    &:hover {
+      color: var(--color-grey-dark-1);
+
+      span {
+        margin-left: 0.8rem;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      animation: pulsate 1s infinite;
+    }
   }
 }
