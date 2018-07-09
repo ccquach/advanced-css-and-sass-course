@@ -10,11 +10,24 @@
     list-style: none;
     margin-top: 3.5rem;
 
+    @include respond(medium) {
+      display: flex;
+      margin: 0;
+    }
+
     &__item {
       position: relative;
 
+      @include respond(medium) {
+        flex: 1;
+      }
+
       &:not(:last-child) {
         margin-bottom: 0.5rem;
+
+        @include respond(medium) {
+          margin: 0;
+        }
       }
 
       &::before {
@@ -55,6 +68,16 @@
 
         display: flex;
         align-items: center;
+
+        @include respond(medium) {
+          justify-content: center;
+          padding: 2rem;
+        }
+
+        @include respond(small) {
+          flex-direction: column;
+          padding: 1.5rem 0.5rem;
+        }
       }
     }
 
@@ -63,6 +86,13 @@
       width: 1.75rem;
       margin-right: 2rem;
       fill: currentColor;
+
+      @include respond(small) {
+        margin-right: 0;
+        margin-bottom: 0.7rem;
+        width: 1.5rem;
+        height: 1.5rem;
+      }
     }
   }
 
@@ -71,5 +101,9 @@
     color: var(--color-grey-light-4);
     text-align: center;
     padding: 2.5rem;
+
+    @include respond(medium) {
+      display: none;
+    }
   }
 }

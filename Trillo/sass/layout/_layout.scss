@@ -5,14 +5,38 @@
   box-shadow: var(--shadow-dark);
 
   min-height: 50rem;
+
+  @include respond(largest) {
+    margin: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .header {
   height: 7rem;
+
+  @include respond(largest) {
+    flex: 0 0 7rem;
+  }
+
+  @include respond(smallest) {
+    flex: 0 0 11rem;
+  }
 }
 
 .content {
   display: flex;
+
+  @include respond(largest) {
+    flex: 1;
+  }
+
+  @include respond(medium) {
+    flex-direction: column;
+  }
 }
 
 .sidebar {
@@ -21,10 +45,24 @@
 
 .main-view {
   flex: 1;
+
+  @include respond(largest) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .detail {
   display: flex;
+
+  @include respond(largest) {
+    align-items: flex-start;
+    flex: 1;
+  }
+
+  @include respond(small) {
+    flex-direction: column;
+  }
 }
 
 .description {

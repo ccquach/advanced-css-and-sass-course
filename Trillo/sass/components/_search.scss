@@ -5,6 +5,13 @@
   align-items: center;
   justify-content: center;
 
+  @include respond(smallest) {
+    order: 1;
+    flex: 0 0 100%;
+    background-color: var(--color-grey-light-2);
+    overflow: hidden;
+  }
+
   &__input {
     font-family: inherit;
     font-size: inherit; // inherited from .header
@@ -16,11 +23,22 @@
     width: 90%;
     transition: all 0.2s ease-out;
     margin-right: -3.25rem;
+    padding-right: 4.25rem;
+
+    @include respond(smallest) {
+      padding: 1rem 2rem;
+      padding-right: 9rem;
+      margin-right: -8rem;
+    }
 
     &:focus {
       outline: none;
       width: 100%;
       background-color: var(--color-grey-light-3);
+
+      @include respond(smallest) {
+        background-color: transparent;
+      }
     }
 
     &::-webkit-input-placeholder {
@@ -29,13 +47,9 @@
     }
   }
 
-  &__input:focus + &__button {
-    background-color: var(--color-grey-light-3);
-  }
-
   &__button {
     border: none;
-    background-color: var(--color-grey-light-2);
+    background-color: transparent;
 
     &:focus {
       outline: none;

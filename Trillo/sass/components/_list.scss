@@ -8,6 +8,10 @@
   display: flex;
   flex-wrap: wrap;
 
+  @include respond(mini) {
+    flex-direction: column;
+  }
+
   &__item {
     flex: 0 0 50%;
     margin-bottom: 0.7rem;
