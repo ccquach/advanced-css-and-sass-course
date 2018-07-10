@@ -36,3 +36,8 @@
     }
   }
 }
+
+@mixin show-dropdown {
+  transform: scaleY(1);
+  visibility: visible;
+}

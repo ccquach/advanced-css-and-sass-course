@@ -19,7 +19,6 @@
     <!-- HEADER -->
 
     <header class="header">
-
       <!-- LOGO -->
       <img src="./img/logo.png" alt="trillo logo" class="logo">
 
@@ -36,12 +35,24 @@
       <!-- USER NAVIGATION -->
 
       <nav class="user-nav">
+
         <!-- BOOKMARKS -->
         <div class="user-nav__icon-box">
           <svg class="user-nav__icon">
             <use xlink:href="./img/sprite.svg#icon-bookmark"></use>
           </svg>
           <span class="user-nav__notification">7</span>
+          <ul class="dropdown">
+            <li class="dropdown__item">
+              <a href="#" class="dropdown__link">Cotton House Hotel</a>
+            </li>
+            <li class="dropdown__item">
+              <a href="#" class="dropdown__link">Lime Wood</a>
+            </li>
+            <li class="dropdown__item">
+              <a href="#" class="dropdown__link">Ett Hem</a>
+            </li>
+          </ul>
         </div>
 
         <!-- NOTIFICATIONS -->
@@ -50,14 +61,71 @@
             <use xlink:href="./img/sprite.svg#icon-chat"></use>
           </svg>
           <span class="user-nav__notification">13</span>
+          <ul class="dropdown">
+            <li class="dropdown__item">
+              <a href="#" class="dropdown__link dropdown__link--unread">Tour Cancelled.</a>
+            </li>
+            <li class="dropdown__item">
+              <a href="#" class="dropdown__link dropdown__link--read">Car rented!</a>
+            </li>
+            <li class="dropdown__item">
+              <a href="#" class="dropdown__link dropdown__link--read">Flight booked!</a>
+            </li>
+            <li class="dropdown__item">
+              <a href="#" class="dropdown__link dropdown__link--read">Hotel booked!</a>
+            </li>
+            <li class="dropdown__item">
+              <a href="#" class="dropdown__link">
+                <svg class="dropdown__icon">
+                  <use xlink:href="./img/sprite.svg#icon-dots-three-horizontal"></use>
+                </svg>
+                See more
+              </a>
+            </li>
+            <li class="dropdown__item">
+              <a href="#" class="dropdown__link">
+                <svg class="dropdown__icon">
+                  <use xlink:href="./img/sprite.svg#icon-paper-plane"></use>
+                </svg>
+                New message
+              </a>
+            </li>
+          </ul>
         </div>
 
         <!-- USER -->
         <div class="user-nav__user">
           <img src="./img/user.jpg" alt="User photo" class="user-nav__user-photo">
           <span class="user-nav__user-name">Jonas</span>
+          <ul class="dropdown">
+            <li class="dropdown__item">
+              <a href="#" class="dropdown__link">
+                <svg class="dropdown__icon">
+                  <use xlink:href="./img/sprite.svg#icon-globe"></use>
+                </svg>
+                My Bookings
+              </a>
+            </li>
+            <li class="dropdown__item">
+              <a href="#" class="dropdown__link">
+                <svg class="dropdown__icon">
+                  <use xlink:href="./img/sprite.svg#icon-cog"></use>
+                </svg>
+                Account Settings
+              </a>
+            </li>
+            <li class="dropdown__item">
+              <a href="#" class="dropdown__link">
+                <svg class="dropdown__icon">
+                  <use xlink:href="./img/sprite.svg#icon-log-out"></use>
+                </svg>
+                Log out
+              </a>
+            </li>
+          </ul>
         </div>
       </nav>
+
     </header>
 
     <div class="content">
