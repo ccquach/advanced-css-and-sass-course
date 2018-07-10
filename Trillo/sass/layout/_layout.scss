@@ -3,12 +3,13 @@
   margin: 8rem auto;
   background-color: var(--color-grey-light-1);
   box-shadow: var(--shadow-dark);
+  overflow-x: hidden;
 
   min-height: 50rem;
 
   @include respond(largest) {
     margin: 0;
-    min-width: 100vw;
+    min-width: 100%;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
