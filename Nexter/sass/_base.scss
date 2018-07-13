@@ -14,6 +14,10 @@ $color-grey-dark-2: #6d5d4b;
 $font-primary: 'Nunito', sans-serif;
 $font-display: 'Josefin Sans', sans-serif;
 
+// GRID
+$responsive-col-3: repeat(auto-fit, minmax(25rem, 1fr));
+$margin-section: 15rem 0;
+
 *,
 *::before,
 *::after {
