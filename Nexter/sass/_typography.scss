@@ -31,6 +31,21 @@
 .mb-hg {
   margin-bottom: 8rem;
 }
+.m-section {
+  margin: 15rem 0;
+
+  @media only screen and (max-width: $bp-largest) {
+    margin: 12rem 0;
+  }
+
+  @media only screen and (max-width: $bp-large) {
+    margin: 10rem 0;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    margin: 8rem 0;
+  }
+}
 
 // ********** HEADINGS **********
 

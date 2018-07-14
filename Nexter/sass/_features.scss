@@ -1,8 +1,6 @@
 .features {
   grid-column: center-start / center-end;
 
-  margin: $margin-section;
-
   display: grid;
   grid-template-columns: $responsive-col-3;
   grid-gap: 6rem;
