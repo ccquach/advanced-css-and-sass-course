@@ -3,59 +3,180 @@
   grid-column: sidebar-start / sidebar-end;
   grid-row: 1 / -1;
 
-  display: flex;
-  justify-content: center;
+  z-index: 2000;
+  position: relative;
 
   @media only screen and (max-width: $bp-large) {
     grid-column: 1 / -1;
     grid-row: 1 / 2;
-
-    justify-content: flex-end;
-    align-items: center;
-  }
-}
-
-.nav-btn {
-  border: none;
-  border-radius: 0;
-
-  background-color: #fff;
-  height: 2px;
-  width: 4.5rem;
-  margin-top: 4rem;
-  position: relative;
-
-  @media only screen and (max-width: $bp-large) {
-    margin-top: 0;
-    margin-right: 3rem;
   }
 
-  &::before,
-  &::after {
-    content: '';
-    display: block;
+  &__checkbox {
+    display: none;
+  }
 
-    background-color: #fff;
-    height: 2px;
-    width: 4.5rem;
-
-    position: absolute;
+  &__btn {
+    cursor: pointer;
+    position: fixed;
+    top: 0;
     left: 0;
-  }
+    z-index: 2500;
+    height: 100%;
+    width: $sidebar-left-width;
+    background-color: $color-primary;
+    transition: all 0.2s ease-out;
 
-  &::before {
-    top: -1.5rem;
+    display: flex;
+    justify-content: center;
 
     @media only screen and (max-width: $bp-large) {
-      top: -1.2rem;
+      position: absolute;
+      align-items: center;
+      background-color: transparent;
     }
   }
 
-  &::after {
-    top: 1.5rem;
+  &__checkbox:not(:checked) ~ &__btn:hover {
+    width: calc(#{$sidebar-left-width} + 1rem);
+    box-shadow: 0 2rem 5rem rgba(#000, 0.3);
 
     @media only screen and (max-width: $bp-large) {
-      top: 1.2rem;
+      width: $sidebar-left-width;
+      box-shadow: none;
+    }
+  }
+
+  &__icon {
+    position: relative;
+    background-color: #fff;
+    height: 2px;
+    width: 4.5rem;
+    margin-top: 4rem;
+    transition: all 0.2s ease-out;
+
+    @media only screen and (max-width: $bp-large) {
+      margin-top: 0;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      background-color: #fff;
+      height: 2px;
+      width: 4.5rem;
+
+      position: absolute;
+      left: 0;
+      transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+    }
+
+    &::before {
+      top: -1.5rem;
+
+      @media only screen and (max-width: $bp-large) {
+        top: -1.2rem;
+      }
+    }
+
+    &::after {
+      top: 1.5rem;
+
+      @media only screen and (max-width: $bp-large) {
+        top: 1.2rem;
+      }
+    }
+  }
+
+  // BUTTON ANIMATION
+  &__checkbox:checked ~ &__btn &__icon {
+    background-color: transparent;
+
+    &::before {
+      top: 0;
+      transform: rotate(135deg);
+    }
+
+    &::after {
+      top: 0;
+      transform: rotate(-135deg);
+    }
+  }
+
+  // NAV MENU
+
+  &__navigation {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform-origin: 0% 0%;
+    transform: translateX(-100%);
+    transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 1500;
+    background-color: rgba($color-primary, 0.95);
+
+    @media only screen and (max-width: $bp-large) {
+      height: auto;
+      width: 100%;
+      transform: translateX(0) translateY(-100%);
+    }
+  }
+
+  // FUNCTIONALITY
+
+  &__checkbox:checked ~ &__navigation {
+    box-shadow: 0 2rem 4rem rgba(#000, 0.5);
+    transform: translateX(0);
+    left: $sidebar-left-width;
+
+    @media only screen and (max-width: $bp-large) {
+      left: 0;
+      transform: translateX(0) translateY(0);
+      top: $sidebar-top-height;
+      box-shadow: none;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding-top: 1.5rem;
+
+    display: grid;
+    grid-template-columns: max-content;
+    align-content: start;
+
+    @media only screen and (max-width: $bp-large) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      display: block;
+      padding: 2rem 6rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: $color-grey-light-1;
+      font-size: 1.6rem;
+      border-right: 3px solid transparent;
+      transition: all 0.3s ease-out;
+
+      @media only screen and (max-width: $bp-large) {
+        padding: 1.5rem 4rem;
+        border-right: none;
+      }
+    }
+
+    &:hover,
+    &:active {
+      border-right: 3px solid $color-grey-light-1;
+      background-color: rgba($color-primary-dark, 0.85);
+
+      @media only screen and (max-width: $bp-large) {
+        border-right: none;
+      }
     }
   }
 }
