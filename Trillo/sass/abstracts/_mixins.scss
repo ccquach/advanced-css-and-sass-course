@@ -1,0 +1,43 @@
+@mixin respond($breakpoint) {
+  @if $breakpoint == largest {
+    // 1200px
+    @media only screen and (max-width: 75em) {
+      @content;
+    }
+  }
+  @if $breakpoint == large {
+    // 1100px
+    @media only screen and (max-width: 68.75em) {
+      @content;
+    }
+  }
+  @if $breakpoint == medium {
+    // 900px
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    }
+  }
+  @if $breakpoint == small {
+    // 600px
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    }
+  }
+  @if $breakpoint == smallest {
+    // 500px
+    @media only screen and (max-width: 31.25em) {
+      @content;
+    }
+  }
+  @if $breakpoint == mini {
+    // 450px
+    @media only screen and (max-width: 28.125em) {
+      @content;
+    }
+  }
+}
+
+@mixin show-dropdown {
+  transform: scaleY(1);
+  visibility: visible;
+}
